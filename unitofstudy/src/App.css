@@ -7,7 +7,25 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+table {
+  border: #aaa 1px solid;
+  width: 900px;
+  background: #eee;
+}
+td {
+  width: 450px;
+  padding-left: 30px;
+}
+th {
+  width: 450px;
+  padding-left: 30px;
+}
+.center {
+  margin-left: 120px;
+}
+h3 {
+  margin-left: 180px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
