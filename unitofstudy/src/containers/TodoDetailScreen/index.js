@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export class TodoDetailScreen extends React.Component {
   state = { person: "" };
-  componentDidMount() {
+  async componentDidMount() {
     let id = this.props.match.params.person_id;
-    axios
+    await axios
       .get("http://5d36d86c86300e0014b647c7.mockapi.io/todos/" + id)
       .then(res => {
         this.setState({
@@ -14,6 +14,7 @@ export class TodoDetailScreen extends React.Component {
         });
       });
   }
+
   render() {
     const person = this.state.person ? (
       <table>

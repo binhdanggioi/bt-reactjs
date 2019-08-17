@@ -1,0 +1,43 @@
+{"products": [
+    {
+      "id": 1,
+      "image": [
+        {
+          "url": "https://res.cloudinary.com/demo/image/upload/c_fill,e_saturation:70,h_100,w_120/dpr_1.0,f_auto/castle.jpg"
+        }
+      ],
+      "name": "skiBluaaaaaae",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "image": [
+        {
+          "url": "https://res.cloudinary.com/demo/image/upload/c_fill,e_saturation:70,h_100,w_120/dpr_1.0,f_auto/castle.jpg"
+        }
+      ],
+      "name": "skiYellowaaaaaaaa",
+      "price": 10000
+    },
+    {
+      "id": 3,
+      "image": [
+        {
+          "url": "https://res.cloudinary.com/demo/image/upload/c_fill,e_saturation:70,h_100,w_120/dpr_1.0,f_auto/castle.jpg"
+        }
+      ],
+      "name": "skiBluaaaaaae",
+      "price": 5000
+    },
+    {
+      "id": 4,  
+      "image": [
+        {
+          "url": "https://res.cloudinary.com/demo/image/upload/c_fill,e_saturation:70,h_100,w_120/dpr_1.0,f_auto/castle.jpg"
+        }
+      ],
+      "name": "skiBluaaaaaae",
+      "price": 5000
+    }
+  ]
+}

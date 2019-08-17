@@ -26,6 +26,9 @@ th {
 h3 {
   margin-left: 180px;
 }
+link{
+  text-decoration: none;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

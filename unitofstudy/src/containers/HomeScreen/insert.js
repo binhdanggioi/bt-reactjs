@@ -1,30 +1,31 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 export default class PersonList extends React.Component {
   state = {
-    name: '',
-  }
+    name: ""
+  };
 
   handleChange = event => {
     this.setState({ name: event.target.value });
-  }
+  };
 
   handleSubmit = event => {
     event.preventDefault();
     const user = {
-        name: this.state.name
-      };
+      name: this.state.name
+    };
 
-    axios.post(`http://5d36d86c86300e0014b647c7.mockapi.io/todos`, user)
+    axios
+      .post(`http://5d36d86c86300e0014b647c7.mockapi.io/todos`, user)
       .then(res => {
         console.log(res);
         console.log(res.data);
       })
-      .catch(console.log)
+      .catch(console.log);
 
     console.log(this.state);
-  }
+  };
 
   render() {
     return (
@@ -37,6 +38,6 @@ export default class PersonList extends React.Component {
           <button type="submit">Add</button>
         </form>
       </div>
-    )
+    );
   }
 }

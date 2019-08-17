@@ -2,12 +2,10 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import TodoDetailScreen from "../TodoDetailScreen/index";
-import { async } from "q";
 
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    //khai báo mảng items, trang thái text rỗng
     this.state = { persons: [], name: "" };
   }
   async componentDidMount() {
@@ -21,23 +19,26 @@ class HomeScreen extends React.Component {
   };
   handleChange = event => {
     this.setState({ name: event.target.value });
-    //lấy giá trị của text xâu ra mỗi lần thay đổi
   };
   handleDelete = async id => {
-    await axios.delete(`http://5d36d86c86300e0014b647c7.mockapi.io/todos/${id}`);
+    await axios.delete(
+      `http://5d36d86c86300e0014b647c7.mockapi.io/todos/${id}`
+    );
+    alert("Ngu chưa lỡ xóa mất con mẹ mày rồi !!!");
     this.componentDidMount();
   };
   handleSubmit = async event => {
-    await axios.post(`http://5d36d86c86300e0014b647c7.mockapi.io/todos`, {
+    await axios
+      .post(`http://5d36d86c86300e0014b647c7.mockapi.io/todos`, {
         name: this.state.name
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+        axios.get("http://5d36d86c86300e0014b647c7.mockapi.io/todos");
+        this.setState({ name: "" });
       });
-      this.componentDidMount(); 
-      // .then(res => {
-      //   console.log(res);
-      //   console.log(res.data);
-      //   axios.get("http://5d36d86c86300e0014b647c7.mockapi.io/todos");
-      //   this.setState({ name: "" });
-      // });
+    this.componentDidMount();
     event.preventDefault();
   };
   render() {
@@ -60,10 +61,10 @@ class HomeScreen extends React.Component {
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td className="link">
                     <Link to={"/" + person.id}>{person.id}</Link>
                   </td>
-                  <td>
+                  <td className="link">
                     <Link to={"/" + person.id}>{person.name}</Link>
                   </td>
                 </tr>
